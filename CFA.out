@@ -1,0 +1,314 @@
+Mplus VERSION 8.1 (Mac)
+MUTHEN & MUTHEN
+02/01/2020   1:54 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: ICT Confirmatory Factor Analysis
+
+  DATA: FILE IS 20200128_MplusInput.txt;
+
+  VARIABLE:
+      NAMES ARE
+            PC	SPHONE	TAB	
+            RDS_bin	RDS	
+            white	age	male	edu	income	employ	numvehicle	
+            TNC_entryyear	trip_accompany	flextime		
+            numadult	numchild urban	pop_den	
+            tripnum	pmt	vmt;
+
+      USEVARIABLES ARE
+            PC	SPHONE	TAB;
+
+      CATEGORICAL ARE PC SPHONE TAB;
+
+  ANALYSIS: ESTIMATOR = MLR;
+  	 LINK = PROBIT;
+
+  MODEL: ICT BY PC SPHONE TAB;
+
+  OUTPUT: STANDARDIZED;
+          !MODINDICES;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+ICT Confirmatory Factor Analysis
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                      173079
+
+Number of dependent variables                                    3
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Binary and ordered categorical (ordinal)
+   PC          SPHONE      TAB
+
+Continuous latent variables
+   ICT
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-02
+    Relative loglikelihood change                        0.100D-05
+    Derivative                                           0.100D-02
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            10
+  Minimum value for logit thresholds                           -10
+  Minimum expected cell size for chi-square              0.100D-01
+Optimization algorithm                                         EMA
+Integration Specifications
+  Type                                                    STANDARD
+  Number of integration points                                  15
+  Dimensions of numerical integration                            1
+  Adaptive quadrature                                           ON
+Link                                                        PROBIT
+Cholesky                                                        ON
+
+Input data file(s)
+  20200128_MplusInput.txt
+Input data format  FREE
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    PC
+      Category 1    0.074        12836.000
+      Category 2    0.021         3626.000
+      Category 3    0.044         7661.000
+      Category 4    0.109        18793.000
+      Category 5    0.752       130163.000
+    SPHONE
+      Category 1    0.180        31224.000
+      Category 2    0.012         2035.000
+      Category 3    0.023         3919.000
+      Category 4    0.054         9396.000
+      Category 5    0.731       126505.000
+    TAB
+      Category 1    0.345        59764.000
+      Category 2    0.058        10119.000
+      Category 3    0.099        17125.000
+      Category 4    0.149        25768.000
+      Category 5    0.348        60303.000
+
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       15
+
+Loglikelihood
+
+          H0 Value                     -516979.151
+          H0 Scaling Correction Factor      1.0105
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                 1033988.301
+          Bayesian (BIC)               1034139.224
+          Sample-Size Adjusted BIC     1034091.553
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit for the Binary and Ordered Categorical
+(Ordinal) Outcomes
+
+          Pearson Chi-Square
+
+          Value                          12214.500
+          Degrees of Freedom                   109
+          P-Value                           0.0000
+
+          Likelihood Ratio Chi-Square
+
+          Value                          12035.160
+          Degrees of Freedom                   109
+          P-Value                           0.0000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ICT      BY
+    PC                 1.000      0.000    999.000    999.000
+    SPHONE             2.626      0.065     40.183      0.000
+    TAB                1.229      0.016     78.376      0.000
+
+ Thresholds
+    PC$1              -1.720      0.006   -290.549      0.000
+    PC$2              -1.547      0.006   -276.532      0.000
+    PC$3              -1.269      0.005   -248.161      0.000
+    PC$4              -0.795      0.004   -183.772      0.000
+    SPHONE$1          -1.779      0.027    -65.843      0.000
+    SPHONE$2          -1.691      0.026    -65.674      0.000
+    SPHONE$3          -1.530      0.023    -65.187      0.000
+    SPHONE$4          -1.186      0.019    -63.355      0.000
+    TAB$1             -0.493      0.004   -116.837      0.000
+    TAB$2             -0.292      0.004    -73.923      0.000
+    TAB$3              0.026      0.004      6.671      0.000
+    TAB$4              0.502      0.004    116.434      0.000
+
+ Variances
+    ICT                0.416      0.008     50.327      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ICT      BY
+    PC                 0.542      0.004    142.543      0.000
+    SPHONE             0.861      0.004    192.582      0.000
+    TAB                0.621      0.004    165.817      0.000
+
+ Thresholds
+    PC$1              -1.446      0.005   -312.987      0.000
+    PC$2              -1.300      0.004   -302.600      0.000
+    PC$3              -1.066      0.004   -277.649      0.000
+    PC$4              -0.668      0.003   -202.196      0.000
+    SPHONE$1          -0.904      0.004   -253.511      0.000
+    SPHONE$2          -0.859      0.004   -244.905      0.000
+    SPHONE$3          -0.778      0.003   -227.923      0.000
+    SPHONE$4          -0.603      0.003   -185.413      0.000
+    TAB$1             -0.386      0.003   -124.285      0.000
+    TAB$2             -0.229      0.003    -75.276      0.000
+    TAB$3              0.020      0.003      6.680      0.000
+    TAB$4              0.394      0.003    128.551      0.000
+
+ Variances
+    ICT                1.000      0.000    999.000    999.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ICT      BY
+    PC                 0.542      0.004    142.543      0.000
+    SPHONE             0.861      0.004    192.582      0.000
+    TAB                0.621      0.004    165.817      0.000
+
+ Thresholds
+    PC$1              -1.446      0.005   -312.987      0.000
+    PC$2              -1.300      0.004   -302.600      0.000
+    PC$3              -1.066      0.004   -277.649      0.000
+    PC$4              -0.668      0.003   -202.196      0.000
+    SPHONE$1          -0.904      0.004   -253.511      0.000
+    SPHONE$2          -0.859      0.004   -244.905      0.000
+    SPHONE$3          -0.778      0.003   -227.923      0.000
+    SPHONE$4          -0.603      0.003   -185.413      0.000
+    TAB$1             -0.386      0.003   -124.285      0.000
+    TAB$2             -0.229      0.003    -75.276      0.000
+    TAB$3              0.020      0.003      6.680      0.000
+    TAB$4              0.394      0.003    128.551      0.000
+
+ Variances
+    ICT                1.000      0.000    999.000    999.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ICT      BY
+    PC                 0.645      0.006    100.654      0.000
+    SPHONE             1.694      0.034     49.767      0.000
+    TAB                0.793      0.008    101.845      0.000
+
+ Thresholds
+    PC$1              -1.720      0.006   -290.549      0.000
+    PC$2              -1.547      0.006   -276.532      0.000
+    PC$3              -1.269      0.005   -248.161      0.000
+    PC$4              -0.795      0.004   -183.772      0.000
+    SPHONE$1          -1.779      0.027    -65.843      0.000
+    SPHONE$2          -1.691      0.026    -65.674      0.000
+    SPHONE$3          -1.530      0.023    -65.187      0.000
+    SPHONE$4          -1.186      0.019    -63.355      0.000
+    TAB$1             -0.493      0.004   -116.837      0.000
+    TAB$2             -0.292      0.004    -73.923      0.000
+    TAB$3              0.026      0.004      6.671      0.000
+    TAB$4              0.502      0.004    116.434      0.000
+
+ Variances
+    ICT                1.000      0.000    999.000    999.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    PC                 0.294      0.004     71.272      0.000
+    SPHONE             0.742      0.008     96.291      0.000
+    TAB                0.386      0.005     82.908      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.236E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    /Users/jcmoody/Dropbox (MIT)/ICT_Joanna_Hui/models_Mplus/model1_CFA.dgm
+
+     Beginning Time:  13:54:28
+        Ending Time:  13:54:34
+       Elapsed Time:  00:00:06
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2018 Muthen & Muthen
